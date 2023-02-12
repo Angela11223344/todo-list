@@ -10,9 +10,16 @@ import "./App.css";
 
 function App() {
 
+    // //State
+    // const [todos, setTodos] = useState([
+    //   { text: "Do this", isCompleted: false, ranking:"1" },
+    //   { text: "Do that", isCompleted: false, ranking:"2" },
+    //   { text: "Maybe something else", isCompleted: false, ranking:"3" },
+    // ]);
+
     //State
     const [todos, setTodos] = useState([
-      { text: "Do this", isCompleted: false },
+      { text: "Do this", isCompleted: true },
       { text: "Do that", isCompleted: false },
       { text: "Maybe something else", isCompleted: false },
     ]);
@@ -29,11 +36,31 @@ function App() {
       setTodos(newTodos);
     };
 
+    const notComplete = (index) => {
+      const newTodos = [...todos];
+      newTodos[index].isCompleted = false;
+      setTodos(newTodos);
+    }
+
     const removeTodo = (index) => {
       const newTodos = [...todos];
       newTodos.splice(index, 1);
       setTodos(newTodos);
     }
+
+    const deleteAll = () => {
+      const newTodos = [];
+      setTodos(newTodos);
+    }
+
+    // const updateRank = (index, newRanking) => {
+    //   const newTodos = [...todos];
+    //   newTodos[index].ranking = newRanking;
+    //   newTodos.sort((todoNew, todoOld) => {
+    //     return todoNew.ranking - todoOld.ranking;
+    //   });
+    //   setTodos(newTodos);
+    // };
 
   return (
     <div className="app">
@@ -45,10 +72,17 @@ function App() {
           todo={todo} 
           index={index} 
           completeTodo={completeTodo} 
-          removeTodo={removeTodo}/>
+          notComplete={notComplete}
+          removeTodo={removeTodo}
+          //updateRank={newRanking}
+          //rankMax={todos.length}
+          />
 
       ))}
-        <ToDoForm addTodo={addTodo} />
+        <ToDoForm 
+        addTodo={addTodo}
+        deleteAll={deleteAll}
+        />
       </div>  
     </div>
   );

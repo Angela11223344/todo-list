@@ -3,7 +3,7 @@ import React, { useState } from "react"
 function ToDoForm(props) {
 
     // Props
-    const { addTodo } = props;
+    const { addTodo, deleteAll } = props;
 
     //State
     const [todo, setTodo] = useState("");
@@ -19,14 +19,17 @@ function ToDoForm(props) {
     };
 
     return (
+        <>
         <form onSubmit={handleSubmit}>
-            <input 
-            type="text" 
-            placeholder="Add todo..." 
-            value={todo} 
-            onChange={(event) => setTodo(event.target.value)}
-            />
+            <input
+                type="text"
+                placeholder="Add to-do..."
+                value={todo}
+                onChange={(event) => setTodo(event.target.value)} />
         </form>
+        <button onClick={() => deleteCompleted(index)}>Delete all completed items!</button>
+        <button onClick={() => deleteAll()}>Delete all todos!</button>
+        </>
     );
 }
 
