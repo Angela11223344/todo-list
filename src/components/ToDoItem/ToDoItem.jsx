@@ -11,8 +11,7 @@ function ToDoItem(props) {
         const { todo, index, completeTodo, notComplete, importantTodo, removeTodo } = props;
 
     return (
-        <div className={`todo ${todo.isCompleted ? "complete" : ""}`}> 
-        <div className={`isImportant, todo ${todo.isImportant ? "important" : ""}`}>
+        <div className={`todo ${todo.isCompleted ? "complete" : ""} ${todo.isImportant ? "important" : ""}`}>
             {todo.text}
         <div>
         <button onClick={() => completeTodo(index)}>Done!</button>
@@ -22,7 +21,7 @@ function ToDoItem(props) {
         {/* <select onChange={(event) => updateRank (index, event.target.value)}></select> */}
         </div>
         </div>
-        </div>
+        // </div>
     );
 }
 
