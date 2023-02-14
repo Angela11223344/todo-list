@@ -15,4 +15,5 @@
 .important {
     color: red;
     font-weight: bold;
+    text-transform: uppercase;
 }
