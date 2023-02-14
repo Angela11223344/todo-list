@@ -31,7 +31,7 @@ function ToDoForm(props) {
                 onChange={(event) => setTodo(event.target.value)}/> 
                 <button>Submit</button>
         </form>
-        <button onClick={() => deleteAll()}>Delete EVERYTHING!</button>
+        <button onClick={() => deleteAll()}>Clear ALL!</button>
         </>
     );
 }

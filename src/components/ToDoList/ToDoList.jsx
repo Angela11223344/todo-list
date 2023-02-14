@@ -8,7 +8,7 @@ function ToDoList(props) {
 
     return (
         <div>
-        <button onClick={() => deleteCompleted(index)}>Delete completed items!</button>
+        <button onClick={() => deleteCompleted(index)}>Clear completed items!</button>
         </div>
     );
 }

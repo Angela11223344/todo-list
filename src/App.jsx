@@ -20,9 +20,12 @@ function App() {
 
     //State
     const [todos, setTodos] = useState([
-      { text: "Take the dog for a walk", isCompleted: true },
-      { text: "Buy milk", isCompleted: false },
-      { text: "Water the plants", isCompleted: false },
+      { text: "Take the dog for a walk", isCompleted: false, isImportant: false },
+      { text: "Buy milk", isCompleted: true, isImportant: false },
+      { text: "Water the plants", isCompleted: false, isImportant: true },
+      { text: "Go for a run", isCompleted: true, isImportant: false },
+      { text: "Cook dinner", isCompleted: false, isImportant: false }
+
     ]);
 
     //Actions
@@ -41,6 +44,12 @@ function App() {
       const newTodos = [...todos];
       newTodos[index].isCompleted = false;
       setTodos(newTodos);
+    }
+
+    const importantTodo = (index) => {
+      const newTodos = [...todos];
+      newTodos[index].isImportant = true;
+      setTodos(newTodos); 
     }
 
     const removeTodo = (index) => {
@@ -81,6 +90,7 @@ function App() {
           index={index} 
           completeTodo={completeTodo} 
           notComplete={notComplete}
+          importantTodo={importantTodo}
           removeTodo={removeTodo}
           //updateRank={newRanking}
           //rankMax={todos.length}

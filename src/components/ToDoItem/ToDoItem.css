@@ -4,11 +4,15 @@
     font-size: 12px;
     margin-bottom: 6px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
     font-family: 'Courier New', Courier, monospace;
 }
 
 .complete {
     text-decoration: line-through;
+}
+
+.important {
+    color: red;
+    font-weight: bold;
 }
