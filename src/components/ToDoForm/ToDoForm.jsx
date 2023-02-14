@@ -1,5 +1,8 @@
 import React, { useState } from "react"
 
+//CSS
+import "./ToDoForm.css";
+
 function ToDoForm(props) {
 
     // Props
@@ -25,10 +28,10 @@ function ToDoForm(props) {
                 type="text"
                 placeholder="Add to-do..."
                 value={todo}
-                onChange={(event) => setTodo(event.target.value)} />
+                onChange={(event) => setTodo(event.target.value)}/> 
+                <button>Submit</button>
         </form>
-        <button onClick={() => deleteCompleted(index)}>Delete all completed items!</button>
-        <button onClick={() => deleteAll()}>Delete all todos!</button>
+        <button onClick={() => deleteAll()}>Delete EVERYTHING!</button>
         </>
     );
 }

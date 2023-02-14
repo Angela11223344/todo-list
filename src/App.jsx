@@ -3,6 +3,7 @@ import React, { useState } from "react";
 // Components
 import ToDoForm from "./components/ToDoForm/ToDoForm";
 import ToDoItem from "./components/ToDoItem/ToDoItem";
+import ToDoList from "./components/ToDoList/ToDoList";
 
 //CSS
 import "./App.css";
@@ -19,9 +20,9 @@ function App() {
 
     //State
     const [todos, setTodos] = useState([
-      { text: "Do this", isCompleted: true },
-      { text: "Do that", isCompleted: false },
-      { text: "Maybe something else", isCompleted: false },
+      { text: "Take the dog for a walk", isCompleted: true },
+      { text: "Buy milk", isCompleted: false },
+      { text: "Water the plants", isCompleted: false },
     ]);
 
     //Actions
@@ -45,6 +46,13 @@ function App() {
     const removeTodo = (index) => {
       const newTodos = [...todos];
       newTodos.splice(index, 1);
+      setTodos(newTodos);
+    }
+
+    const deleteCompleted = () => {
+      const newTodos = todos.filter(todo => {
+        return !todo.isCompleted;
+      });
       setTodos(newTodos);
     }
 
@@ -77,8 +85,10 @@ function App() {
           //updateRank={newRanking}
           //rankMax={todos.length}
           />
-
       ))}
+        <ToDoList
+        deleteCompleted={deleteCompleted}
+        />  
         <ToDoForm 
         addTodo={addTodo}
         deleteAll={deleteAll}
