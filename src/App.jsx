@@ -20,11 +20,11 @@ function App() {
 
     //State
     const [todos, setTodos] = useState([
-      { text: "Take the dog for a walk", isCompleted: false, isImportant: false },
-      { text: "Buy milk", isCompleted: true, isImportant: false },
-      { text: "Water the plants", isCompleted: false, isImportant: true },
-      { text: "Go for a run", isCompleted: true, isImportant: false },
-      { text: "Cook dinner", isCompleted: false, isImportant: false }
+      { index: 1, text: "Take the dog for a walk", isCompleted: false, isImportant: false },
+      { index: 2, text: "Buy milk", isCompleted: true, isImportant: false },
+      { index: 3, text: "Water the plants", isCompleted: false, isImportant: true },
+      { index: 4, text: "Go for a run", isCompleted: true, isImportant: false },
+      { index: 5, text: "Cook dinner", isCompleted: false, isImportant: false }
 
     ]);
 
